@@ -1,7 +1,5 @@
 package sample;
 
-//
-
 import javafx.scene.Node;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
