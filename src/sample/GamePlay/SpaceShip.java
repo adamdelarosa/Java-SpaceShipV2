@@ -11,7 +11,7 @@ public class SpaceShip  {
     Main main;
     public HBox boxForShip = new HBox();
     private static double W=500,H=800;
-    private static String SPACESHIP = "sample/Asset/Image/shit.png";
+    private static String SPACESHIP = "sample/Asset/Image/spaceShip.png";
     private Image spaceShipImage;
     boolean running, goNorth, goSouth, goEast, goWest;
     ImageView nodeSpaceShip = new ImageView();
