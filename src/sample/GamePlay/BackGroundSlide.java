@@ -1,10 +1,11 @@
-package sample;
+package sample.GamePlay;
 
 import javafx.scene.Node;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.animation.AnimationTimer;
+import sample.Main;
 
 import java.util.Random;
 
@@ -18,7 +19,7 @@ public class BackGroundSlide {
     private final long[] start = new long[STAR_COUNT];
     private final Random random = new Random();
 
-    BackGroundSlide() {
+    public BackGroundSlide() {
         testArea();
     }
 

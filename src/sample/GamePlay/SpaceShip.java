@@ -1,9 +1,10 @@
-package sample;
+package sample.GamePlay;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import sample.Main;
 
 public class SpaceShip  {
 
