@@ -1,30 +1,31 @@
 package sample.GamePlay;
 
-import sun.audio.AudioData;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
+import javax.sound.sampled.*;
+import java.io.IOException;
 
 
 public class SoundFX {
+
+    String levelMusicOne = "/sample/Asset/SoundFX/Music/LevelOneMusic.wav";
+
 
     public SoundFX(){
         whilePlayGameMusic();
     }
 
-
-    public void whilePlayGameMusic(){
-        AudioPlayer myBackgroundPlayer = AudioPlayer.player;
-        ContinuousAudioDataStream myLoop = null;
+    public void whilePlayGameMusic() {
         try {
-            AudioStream myBackgroundMusic = new AudioStream(
-                    getClass().getResourceAsStream("sample/Asset/SoundFX/Music/LevelOneMusic.wav"));
-            AudioData myData = myBackgroundMusic.getData();
-            myLoop = new ContinuousAudioDataStream(myData);
-        }catch(Exception error){
-            System.out.println("Music file error: " + error);
+            Clip clip = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(SoundFX.class.getResourceAsStream(levelMusicOne));
+            clip.open(inputStream);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }catch (IOException ioexeption){
+            ioexeption.printStackTrace();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
         }
-        myBackgroundPlayer.start(myLoop);
-    }
 
+    }
 }
