@@ -8,7 +8,6 @@ import javafx.animation.AnimationTimer;
 
 import java.util.Random;
 
-
 public class BackGroundSlide {
 
     public Main main,sceneMain,globalPrimartStageMain;
@@ -19,11 +18,8 @@ public class BackGroundSlide {
     private final long[] start = new long[STAR_COUNT];
     private final Random random = new Random();
 
-    BackGroundSlide(Main scenemain, Main globalprimartstageMain) {
+    BackGroundSlide() {
         testArea();
-        sceneMain = scenemain;
-        globalPrimartStageMain = globalprimartstageMain;
-
     }
 
     public void testArea() {

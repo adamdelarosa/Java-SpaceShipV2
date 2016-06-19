@@ -33,9 +33,10 @@ public class Main extends Application {
         globalPrimartStage = primaryStage;
     }
 
+
+    //To be menu
     public void MainStarter() {
-        new BackGroundSlide(this,this);
-        new SpaceShip();
+        new GameStart();
     }
 
 
