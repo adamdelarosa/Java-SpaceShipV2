@@ -29,7 +29,6 @@ public class SpaceShip  {
     }
 
     public void shipMovment(){
-//
 
         boxForShip.setFocusTraversable(true);
 
