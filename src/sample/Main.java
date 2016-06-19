@@ -28,7 +28,6 @@ public class Main extends Application {
         scene.setFill(Color.BLACK);
         primaryStage.sizeToScene();
         primaryStage.setScene(scene);
-        //primaryStage.setResizable(false);
         primaryStage.show();
         MainStarter();
         globalPrimartStage = primaryStage;
