@@ -1,4 +1,4 @@
-package sample.Menu;
+package sample.GamePlay;
 
 import sample.GamePlay.BackGroundSlide;
 import sample.GamePlay.SpaceShip;

@@ -5,7 +5,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import sample.Menu.GameStart;
+import sample.GamePlay.GameStart;
+import sample.Menu.Menu;
 
 public class Main extends Application {
 
@@ -30,7 +31,7 @@ public class Main extends Application {
         primaryStage.sizeToScene();
         primaryStage.setScene(scene);
         primaryStage.show();
-        MainStarter();
+        new Menu();
         globalPrimartStage = primaryStage;
     }
 
