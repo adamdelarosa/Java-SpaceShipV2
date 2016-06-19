@@ -9,5 +9,4 @@ public class GameStart {
         new BackGroundSlide();
         new SpaceShip();
     }
-
 }
