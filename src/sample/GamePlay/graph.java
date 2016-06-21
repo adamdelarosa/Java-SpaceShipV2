@@ -1,10 +1,11 @@
 package sample.GamePlay;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.image.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import sample.Main;
-import java.awt.*;
 
 public class graph {
 
@@ -16,20 +17,18 @@ public class graph {
 
     public graph(double X,double Y){
         addToScreenWeaponBox();
-        weaponAnimated();
+        weaponAnimated(X, Y);
 
         System.out.println("Fire: X: " + X + " Y: " + Y);
     }
 
-    public void painter(Graphics g){
-        g.setColor(Color.blue);
-        g.fillRect(25,25,25,25);
-    }
-
-    public void weaponAnimated() {
+    public void weaponAnimated(double xFire,double yFire) {
         weaponChoiseImage = new Image(WEAPONOFCHOISE);
         nodeFirePower.setImage(weaponChoiseImage);
-        boxForWeapon.relocate(70,60);
+        boxForWeapon.relocate(xFire,yFire);
+        while (10>0){
+            System.out.println("10");
+        }
     }
 
     public void addToScreenWeaponBox(){
