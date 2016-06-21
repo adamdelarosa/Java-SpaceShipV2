@@ -28,12 +28,11 @@ public class graph {
     public void weaponAnimated() {
         weaponChoiseImage = new Image(WEAPONOFCHOISE);
         nodeFirePower.setImage(weaponChoiseImage);
+        boxForWeapon.relocate(70,60);
     }
-
 
     public void addToScreenWeaponBox(){
         boxForWeapon.getChildren().addAll(nodeFirePower);
-        boxForWeapon.relocate(12,12);
         main.getRoot().getChildren().add(boxForWeapon);
     }
 
