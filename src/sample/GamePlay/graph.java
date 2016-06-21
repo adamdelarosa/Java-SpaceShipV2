@@ -4,7 +4,6 @@ import javafx.scene.image.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import sample.Main;
-
 import java.awt.*;
 
 public class graph {
@@ -35,5 +34,4 @@ public class graph {
         boxForWeapon.getChildren().addAll(nodeFirePower);
         main.getRoot().getChildren().add(boxForWeapon);
     }
-
 }

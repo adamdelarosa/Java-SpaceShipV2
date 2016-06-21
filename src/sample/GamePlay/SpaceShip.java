@@ -39,7 +39,7 @@ public class SpaceShip  {
                 case LEFT:  goWest  = true; break;
                 case RIGHT: goEast  = true; break;
                 case SHIFT: running = true; break;
-                case SPACE: new graph();
+                case SPACE: new graph();System.out.println("hello"); break;
             }
         });
 
