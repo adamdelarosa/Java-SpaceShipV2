@@ -11,20 +11,34 @@ import java.awt.Graphics;
 import java.io.File;
 import java.io.IOException;
 
-
 public class Bullet {
 
     private double x;
     private double y;
 
-    BufferedImage image;
+    private Image firePowerImage;
 
-    public Bullet(double x, double y, SpaceShip spaceShip) {
+    SpaceShip ss;
+
+
+    private static String FirePower = "sample/Asset/Image/lazerFire.png";
+
+
+    BufferedImage image;
+//    public Bullet(double x, double y, SpaceShip spaceShip) {
+
+    public Bullet(double x, double y) {
         this.x = x;
         this.y = y;
+        shipAnimated();
+    }
 
-        //SpriteSheet ss = new Image();
-        //image = ss.grabImage(1, 2, 32, 32);
+    public void shipAnimated() {
+        firePowerImage = new Image(FirePower);
+        //SpaceShip ss = new SpaceShip();
+        //ss.nodeFirePower.setImage(firePowerImage);
+        ss.nodeFirePower.setImage(firePowerImage);
+
 
     }
 

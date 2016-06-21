@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import sample.GamePlay.GameStart;
 import sample.Menu.Menu;
 
+import java.awt.*;
+
 public class Main extends Application {
 
     public double windowHeight = 500;
@@ -16,6 +18,7 @@ public class Main extends Application {
     public Stage globalPrimartStage;
     public static Group root = new Group();
 
+    Graphics g;
 
     public static Group getRoot(){
         return root;
@@ -32,9 +35,10 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         new Menu();
+        Menu menu = new Menu();
+        menu.render(g);
         globalPrimartStage = primaryStage;
     }
-
 
     //To be menu
     public void MainStarter() {

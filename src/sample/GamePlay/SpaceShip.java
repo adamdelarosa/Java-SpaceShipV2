@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import sample.Main;
+import sample.GamePlay.Bullet;
 
 public class SpaceShip  {
 
@@ -15,18 +16,24 @@ public class SpaceShip  {
     private Image spaceShipImage;
     boolean running, goNorth, goSouth, goEast, goWest;
     ImageView nodeSpaceShip = new ImageView();
+    ImageView nodeFirePower = new ImageView();
 
     public SpaceShip(){
         shipAnimated();
         shipMovment();
         addToScreen();
-        //Set space ship
         setSpaceShipPosition(W / 2, H / 2);
     }
 
     public void shipAnimated() {
         spaceShipImage = new Image(SPACESHIP);
         nodeSpaceShip.setImage(spaceShipImage);
+        nodeFirePower();
+        Bullet bullet = new Bullet(15,15);
+    }
+
+    public ImageView nodeFirePower(){
+        return nodeFirePower;
     }
 
     public void shipMovment(){
@@ -94,7 +101,9 @@ public class SpaceShip  {
 
     }
     public void addToScreen(){
-        boxForShip.getChildren().addAll(nodeSpaceShip);
+        boxForShip.getChildren().addAll(nodeSpaceShip,nodeFirePower);
+        //boxForShip.getChildren().addAll(nodeFirePower);
         main.getRoot().getChildren().add(boxForShip);
+
     }
 }
