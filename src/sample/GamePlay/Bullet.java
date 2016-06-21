@@ -32,9 +32,7 @@ public class Bullet {
 
     public void shipAnimated() {
         firePowerImage = new Image(FirePower);
-        //SpaceShip ss = new SpaceShip();
         //ss.nodeFirePower.setImage(firePowerImage);
-     //   ss.nodeFirePower.setImage(firePowerImage);
 
 
     }
