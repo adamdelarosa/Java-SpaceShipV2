@@ -21,7 +21,6 @@ public class SpaceShip  {
         shipMovment();
         addToScreen();
         setSpaceShipPosition(W / 2, H / 2);
-        new graph();
     }
 
     public void shipAnimated() {
@@ -40,6 +39,7 @@ public class SpaceShip  {
                 case LEFT:  goWest  = true; break;
                 case RIGHT: goEast  = true; break;
                 case SHIFT: running = true; break;
+                case SPACE: new graph();
             }
         });
 
