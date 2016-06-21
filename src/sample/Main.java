@@ -35,8 +35,6 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         new Menu();
-        Menu menu = new Menu();
-        menu.render(g);
         globalPrimartStage = primaryStage;
     }
 

@@ -29,7 +29,7 @@ public class SpaceShip  {
         spaceShipImage = new Image(SPACESHIP);
         nodeSpaceShip.setImage(spaceShipImage);
         nodeFirePower();
-        Bullet bullet = new Bullet(15,15);
+        new Bullet();
     }
 
     public ImageView nodeFirePower(){

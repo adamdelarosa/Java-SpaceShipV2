@@ -25,11 +25,8 @@ public class Bullet {
 
 
     BufferedImage image;
-//    public Bullet(double x, double y, SpaceShip spaceShip) {
 
-    public Bullet(double x, double y) {
-        this.x = x;
-        this.y = y;
+    public Bullet() {
         shipAnimated();
     }
 
@@ -37,7 +34,7 @@ public class Bullet {
         firePowerImage = new Image(FirePower);
         //SpaceShip ss = new SpaceShip();
         //ss.nodeFirePower.setImage(firePowerImage);
-        ss.nodeFirePower.setImage(firePowerImage);
+     //   ss.nodeFirePower.setImage(firePowerImage);
 
 
     }
