@@ -25,9 +25,10 @@ public class graph {
     public void weaponAnimated(double xFire,double yFire) {
         weaponChoiseImage = new Image(WEAPONOFCHOISE);
         nodeFirePower.setImage(weaponChoiseImage);
-        boxForWeapon.relocate(xFire,yFire);
-        while (10>0){
-            System.out.println("10");
+        for (int i=1;i<100;i++){
+            System.out.println(i);
+            boxForWeapon.relocate(xFire++,yFire);
+            //System.out.println("10");
         }
     }
 
