@@ -15,7 +15,6 @@ public class SpaceShip  {
     private Image spaceShipImage;
     boolean running, goNorth, goSouth, goEast, goWest;
     ImageView nodeSpaceShip = new ImageView();
-    ImageView nodeFirePower = new ImageView();
 
     public SpaceShip(){
         shipAnimated();

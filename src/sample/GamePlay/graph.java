@@ -13,9 +13,9 @@ import java.awt.*;
 public class graph {
 
     Main main;
-    public HBox boxForShip = new HBox();
-    private static String SPACESHIP = "sample/Asset/Image/lazerFire.png";
-    private javafx.scene.image.Image spaceShipImage;
+    public HBox boxForWeapon = new HBox();
+    private static String WEAPONOFCHOISE = "sample/Asset/Image/lazerFire.png";
+    private javafx.scene.image.Image weaponChoiseImage;
     ImageView nodeFirePower = new ImageView();
 
     public graph(){
@@ -29,14 +29,15 @@ public class graph {
     }
 
     public void shipAnimated() {
-        spaceShipImage = new Image(SPACESHIP);
-        nodeFirePower.setImage(spaceShipImage);
+        weaponChoiseImage = new Image(WEAPONOFCHOISE);
+        nodeFirePower.setImage(weaponChoiseImage);
     }
 
 
     public void addToScreen(){
-        boxForShip.getChildren().addAll(nodeFirePower);
-        main.getRoot().getChildren().add(boxForShip);
+        boxForWeapon.getChildren().addAll(nodeFirePower);
+        boxForWeapon.relocate(12,12);
+        main.getRoot().getChildren().add(boxForWeapon);
     }
 
 }
