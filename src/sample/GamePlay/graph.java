@@ -14,9 +14,13 @@ public class graph {
     private javafx.scene.image.Image weaponChoiseImage;
     ImageView nodeFirePower = new ImageView();
 
-    public graph(){
+    public graph(double X,double Y){
         addToScreenWeaponBox();
         weaponAnimated();
+
+        System.out.println(X);
+        System.out.println(Y);
+        System.out.println("X - Y Position:");
     }
 
     public void painter(Graphics g){

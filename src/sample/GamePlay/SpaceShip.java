@@ -50,9 +50,7 @@ public class SpaceShip {
                     running = true;
                     break;
                 case SPACE:
-                    new graph();
-                    System.out.println("hello");
-
+                    new graph(boxForShip.getLayoutX(),boxForShip.getLayoutY());
                     break;
             }
         });
