@@ -7,9 +7,6 @@ import sample.Main;
 
 import java.awt.*;
 
-/**
- * Created by ROSA on 21/06/2016.
- */
 public class graph {
 
     Main main;
