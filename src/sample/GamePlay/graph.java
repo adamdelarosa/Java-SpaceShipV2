@@ -18,9 +18,7 @@ public class graph {
         addToScreenWeaponBox();
         weaponAnimated();
 
-        System.out.println(X);
-        System.out.println(Y);
-        System.out.println("X - Y Position:");
+        System.out.println("Fire: X: " + X + " Y: " + Y);
     }
 
     public void painter(Graphics g){
