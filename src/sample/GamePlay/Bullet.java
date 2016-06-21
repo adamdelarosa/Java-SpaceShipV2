@@ -2,14 +2,8 @@ package sample.GamePlay;
 
 
 import javafx.scene.image.Image;
-import sample.Etc.SpriteSheet;
-
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
-import java.io.File;
-import java.io.IOException;
 
 public class Bullet {
 
@@ -25,16 +19,19 @@ public class Bullet {
 
 
     BufferedImage image;
+//    public Bullet(double x, double y, SpaceShip spaceShip) {
 
-    public Bullet() {
+    public Bullet(double x, double y) {
+        this.x = x;
+        this.y = y;
         shipAnimated();
     }
 
     public void shipAnimated() {
         firePowerImage = new Image(FirePower);
+        //SpaceShip ss = new SpaceShip();
         //ss.nodeFirePower.setImage(firePowerImage);
-
-
+        //ss.
     }
 
     public void tick() {
