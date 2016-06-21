@@ -20,7 +20,7 @@ public class graph {
 
     public graph(){
         addToScreen();
-        shipAnimated();
+        weaponAnimated();
     }
 
     public void painter(Graphics g){
@@ -28,7 +28,7 @@ public class graph {
         g.fillRect(25,25,25,25);
     }
 
-    public void shipAnimated() {
+    public void weaponAnimated() {
         weaponChoiseImage = new Image(WEAPONOFCHOISE);
         nodeFirePower.setImage(weaponChoiseImage);
     }
