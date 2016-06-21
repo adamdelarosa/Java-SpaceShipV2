@@ -19,7 +19,7 @@ public class graph {
     ImageView nodeFirePower = new ImageView();
 
     public graph(){
-        addToScreen();
+        addToScreenWeaponBox();
         weaponAnimated();
     }
 
@@ -34,7 +34,7 @@ public class graph {
     }
 
 
-    public void addToScreen(){
+    public void addToScreenWeaponBox(){
         boxForWeapon.getChildren().addAll(nodeFirePower);
         boxForWeapon.relocate(12,12);
         main.getRoot().getChildren().add(boxForWeapon);
