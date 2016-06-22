@@ -1,11 +1,11 @@
 package sample.GamePlay;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.animation.AnimationTimer;
 import javafx.scene.image.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import sample.Main;
+
 
 public class graph {
 
@@ -25,11 +25,21 @@ public class graph {
     public void weaponAnimated(double xFire,double yFire) {
         weaponChoiseImage = new Image(WEAPONOFCHOISE);
         nodeFirePower.setImage(weaponChoiseImage);
-        for (int i=1;i<100;i++){
-            System.out.println(i);
-            boxForWeapon.relocate(xFire++,yFire);
-            //System.out.println("10");
-        }
+        //boxForWeapon.relocate(xFire++,yFire);
+
+
+        new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                for (int i = 0; i < 20; i++) {
+                    System.out.println("hello" + i);
+                    xFire = xFire++;
+                    boxForWeapon.relocate(xFire,yFire);
+
+                }
+            }
+        }.start();
+
     }
 
     public void addToScreenWeaponBox(){
