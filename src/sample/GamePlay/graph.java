@@ -25,20 +25,17 @@ public class graph {
     public void weaponAnimated(double xFire,double yFire) {
         weaponChoiseImage = new Image(WEAPONOFCHOISE);
         nodeFirePower.setImage(weaponChoiseImage);
-        //boxForWeapon.relocate(xFire++,yFire);
+        boxForWeapon.relocate(xFire,yFire);
 
+        while (true){
+            try{
 
-        new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                for (int i = 0; i < 20; i++) {
-                    System.out.println("hello" + i);
-                    xFire = xFire++;
-                    boxForWeapon.relocate(xFire,yFire);
-
-                }
+                Thread.sleep(100);
+            }catch(Exception e)
+            {
+                //out.println("Exception caught");
             }
-        }.start();
+        }
 
     }
 
