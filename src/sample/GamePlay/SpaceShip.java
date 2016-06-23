@@ -17,18 +17,17 @@ public class SpaceShip {
     private Image spaceShipImage;
     boolean running, goNorth, goSouth, goEast, goWest;
     ImageView nodeSpaceShip = new ImageView();
+    Bullet p = new Bullet();
+
 
     public SpaceShip() {
         shipAnimated();
         shipMovment();
         addToScreen();
         setSpaceShipPosition(W / 2, H / 2);
-        new Bullet();
 
         JFrame f = new JFrame("tester");
-
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Bullet p = new Bullet();
         f.add(p);
         f.setVisible(true);
         f.setSize(400,250);
@@ -61,7 +60,11 @@ public class SpaceShip {
                     running = true;
                     break;
                 case SPACE:
-                    new Bullet();
+
+                    break;
+                case X:
+                    p.move();
+                    System.out.println("up");
                     break;
             }
         });
