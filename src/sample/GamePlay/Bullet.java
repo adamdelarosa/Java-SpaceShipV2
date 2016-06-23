@@ -1,21 +1,24 @@
 package sample.GamePlay;
 
+import javafx.application.Platform;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class Bullet extends JPanel {
 
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        this.setBackground(Color.white);
-        g.setColor(Color.CYAN);
-        g.fillRect(25,25,100,100);
-        }
+    int x=60;
 
-
-    public void paint(Graphics g){
-        for(int i=0; i<100; i++) {
-            g.fillRect(12, 12, 12, 12);
-        }
+    public Bullet(){
+        move();
     }
+
+    public void paintComponent(Graphics g){
+        g.fillRect(x,23,23,23);
+        g.setColor(Color.black);
+    }
+    public void move() {
+        Platform.runLater(()-> x++);
+    }
+
 }

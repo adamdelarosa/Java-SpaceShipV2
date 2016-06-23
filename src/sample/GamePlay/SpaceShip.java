@@ -61,7 +61,7 @@ public class SpaceShip {
                     running = true;
                     break;
                 case SPACE:
-                    new graph(boxForShip.getLayoutX(),boxForShip.getLayoutY());
+                    new Bullet();
                     break;
             }
         });
