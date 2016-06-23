@@ -11,9 +11,6 @@ public class Bullet extends JPanel {
 
         g.setColor(Color.CYAN);
         g.fillRect(25,25,100,100);
-
-
-
         }
 
 
