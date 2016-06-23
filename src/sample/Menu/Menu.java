@@ -5,7 +5,6 @@ import sample.GamePlay.GameStart;
 public class Menu {
 
     public Menu(){
-        System.out.println("Menu started.");
         mainMenu();
     }
 

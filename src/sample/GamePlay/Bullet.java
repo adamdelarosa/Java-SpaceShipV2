@@ -8,7 +8,6 @@ public class Bullet extends JPanel {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         this.setBackground(Color.white);
-
         g.setColor(Color.CYAN);
         g.fillRect(25,25,100,100);
         }
