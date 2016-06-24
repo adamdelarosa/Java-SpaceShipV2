@@ -1,28 +1,38 @@
 package sample.GamePlay;
 
-import javafx.application.Platform;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Bullet extends JPanel {
+public class Bullet extends JPanel implements ActionListener {
 
     int x;
+    SpaceShip spaceShipClass;
+
+
+    Timer timer=new Timer(5, (ActionListener) this);
 
     public Bullet(){
-       // move();
+        move();
     }
 
     public void move() {
-        Platform.runLater(()-> {
-            x+=16;
-            System.out.print(x+",");
-            Bullet bul = new Bullet();
-            bul.repaint();
-        });
+            timer.start();
     }
 
+    public void actionPerformed(ActionEvent ev) {
+        if (x!=1000) {
+            x++;
+            repaint();// this will call at every 1 second
+        }else{
+
+        }
+    }
+
+
     public void paintComponent(Graphics g){
-            g.fillRect(x,23,x,x);
+            g.fillRect(x,20,10,10);
             g.setColor(Color.black);
     }
 }
