@@ -1,7 +1,6 @@
 package sample.GamePlay;
 
 import javafx.application.Platform;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,7 +9,7 @@ public class Bullet extends JPanel {
     int x;
 
     public Bullet(){
-        move();
+       // move();
     }
 
     public void move() {
