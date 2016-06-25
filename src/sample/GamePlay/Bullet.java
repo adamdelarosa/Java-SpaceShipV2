@@ -9,40 +9,50 @@ import java.util.ArrayList;
 public class Bullet extends JPanel implements ActionListener {
 
     int x;
-    SpaceShip spaceShipClass;
+
+    Timer timer = new Timer(5, (ActionListener) this);
+
+    ArrayList<Shot> shot = new ArrayList<Shot>();
+
+    Rectangle e1 = new Rectangle(20, 75, 35, 35);
 
 
-    Timer timer=new Timer(5, (ActionListener) this);
-
-    ArrayList<Shape> shapeList = new ArrayList<Shape>();
-    Rectangle e1 = new Rectangle(20,75,35,35);
-
-
-
-    public Bullet(){
+    public Bullet() {
         move();
     }
 
     public void move() {
-            timer.start();
+        timer.start();
     }
 
     public void actionPerformed(ActionEvent ev) {
-        if (x!=1000) {
-            int d =1;
-            shapeList.add(e1);
+        for (int i = 0; i < shot.size(); i++) {
+            System.out.println("pwq");
+        }
 
-            //x++;
-            repaint();// this will call at every 1 second
-        }else{
 
+
+        if (x <= 100) {
+            //shapeList.add(e1);
+            x += 3;
+            repaint();
         }
     }
 
 
-    public void paintComponent(Graphics g){
-            e1.add(g.getClipBounds());
-            g.fillRect(x,20,10,10);
-            g.setColor(Color.black);
+    public void paintComponent(Graphics g) {
+        g.fillRect(x, 20, 10, 10);
+        g.setColor(Color.black);
+    }
+
+    public void terminateBullte(){
+
     }
 }
+
+
+
+
+
+
+

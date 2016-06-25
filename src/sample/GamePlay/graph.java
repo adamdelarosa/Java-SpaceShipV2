@@ -1,41 +1,53 @@
 package sample.GamePlay;
 
-import javafx.scene.image.*;
-import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
-import sample.Main;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+public class graph extends JPanel implements ActionListener {
+
+    int x;
+
+    Timer timer = new Timer(5, (ActionListener) this);
 
 
-public class graph {
+    ArrayList<Shot> shot = new ArrayList<Shot>();
+
+    ArrayList<Shape> shapeList = new ArrayList<Shape>();
+
+    Rectangle e1 = new Rectangle(20, 75, 35, 35);
 
 
-    Main main;
-    public HBox boxForWeapon = new HBox();
-    private static String WEAPONOFCHOISE = "sample/Asset/Image/lazerFire.png";
-    private javafx.scene.image.Image weaponChoiseImage;
-    ImageView nodeFirePower = new ImageView();
-    double xUpper;
-
-
-    public graph(double X,double Y){
-
-        xUpper = X;
-        System.out.println("Fire: X: " + X + " Y: " + Y);
-        setPosition();
+    public graph() {
+        move();
     }
 
-    public void setPosition(){
-        for(int position=0;position<100;position++){
+    public void move() {
+        timer.start();
+    }
 
-        xUpper++;
-        weaponAnimated(xUpper,xUpper);
+    public void actionPerformed(ActionEvent ev) {
+        if (x <= 100) {
+            //shapeList.add(e1);
+            x += 3;
+            repaint();
+
+        } else {
+
 
         }
     }
 
-    public void weaponAnimated(double xFire,double yFire) {
-        weaponChoiseImage = new Image(WEAPONOFCHOISE);
-        boxForWeapon.relocate(xFire,yFire);
-        nodeFirePower.setImage(weaponChoiseImage);
+
+    public void paintComponent(Graphics g) {
+        g.fillRect(x, 20, 10, 10);
+        g.setColor(Color.black);
+        g.clearRect(0,0,getWidth(),getHeight());
+    }
+
+    public void terminateBullte(){
+
     }
 }
