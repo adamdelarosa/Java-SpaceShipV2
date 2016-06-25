@@ -1,10 +1,12 @@
 package sample.GamePlay;
 
 import javafx.animation.AnimationTimer;
+import javafx.embed.swing.SwingNode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import sample.Main;
+
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ public class SpaceShip {
 
     Main main;
     public HBox boxForShip = new HBox();
+
     private static double W = 500, H = 800;
     private static String SPACESHIP = "sample/Asset/Image/spaceShip.png";
     private Image spaceShipImage;
@@ -20,12 +23,15 @@ public class SpaceShip {
     ImageView nodeSpaceShip = new ImageView();
     static ArrayList bullets;
 
+    final SwingNode swingNode = new SwingNode();
+
 
     public SpaceShip() {
         shipAnimated();
         shipMovment();
         addToScreen();
         setSpaceShipPosition(W / 2, H / 2);
+        bullets = new ArrayList();
     }
 
     public void shipAnimated() {
@@ -125,27 +131,29 @@ public class SpaceShip {
                 y + cy <= H) {
             boxForShip.relocate(x - cx, y - cy);
         }
+    }
 
+    public void fire() {
+        createAndSetSwingContent(swingNode);
+    }
+
+
+    private void createAndSetSwingContent(final SwingNode swingNode) {
+        SwingUtilities.invokeLater(() -> {
+            JFrame f = new JFrame("tester");
+            Bullet newBullet = new Bullet();
+            swingNode.setContent(newBullet);
+            bullets.add(newBullet);
+            f.add(newBullet);
+            f.setVisible(true);
+            f.setSize(500,500);
+            newBullet.move();
+            newBullet.repaint();
+        });
     }
 
     public void addToScreen() {
-        boxForShip.getChildren().addAll(nodeSpaceShip);
+        boxForShip.getChildren().addAll(swingNode,nodeSpaceShip);
         main.getRoot().getChildren().add(boxForShip);
-
-    }
-    public void fire(){
-        JFrame f = new JFrame("tester");
-        Bullet p = new Bullet();
-        f.add(p);
-        f.setVisible(true);
-        f.setSize(400,250);
-        p.move();
-        p.repaint();
-
-        bullets.add(p);
-    }
-
-    public static ArrayList getBullets(){
-        return bullets;
     }
 }

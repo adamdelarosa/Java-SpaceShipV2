@@ -2,16 +2,16 @@ package sample.GamePlay;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+
+import static java.awt.Color.*;
 
 public class Bullet extends JPanel implements ActionListener {
 
-    int x;
-
-    Timer timer = new Timer(5, (ActionListener) this);
-
+    private int x = 400;
+    private Timer timer = new Timer(5, (ActionListener) this);
 
     public Bullet() {
         move();
@@ -22,24 +22,18 @@ public class Bullet extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ev) {
-        if (x <= 100) {
-            x += 3;
+
+
+        if (x >= 0) {
+            x -= 5;
             repaint();
+            System.out.println(x);
         }
     }
 
-
     public void paintComponent(Graphics g) {
-        g.fillRect(x, 20, 20, 20);
-        g.setColor(Color.black);
+        g.fillRect(20, x, 20, 20);
+        g.setColor(cyan);
+        g.setColor(blue);
     }
-
-
 }
-
-
-
-
-
-
-
