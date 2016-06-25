@@ -6,8 +6,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.awt.Color.*;
-
 public class Bullet extends JPanel implements ActionListener {
 
     private int x = 400;
@@ -22,8 +20,6 @@ public class Bullet extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ev) {
-
-
         if (x >= 0) {
             x -= 5;
             repaint();
@@ -32,8 +28,7 @@ public class Bullet extends JPanel implements ActionListener {
     }
 
     public void paintComponent(Graphics g) {
+        g.setColor(Color.CYAN);
         g.fillRect(20, x, 20, 20);
-        g.setColor(cyan);
-        g.setColor(blue);
     }
 }
