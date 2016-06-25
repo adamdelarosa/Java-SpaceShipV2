@@ -7,6 +7,7 @@ import javafx.scene.layout.HBox;
 import sample.Main;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class SpaceShip {
 
@@ -17,6 +18,7 @@ public class SpaceShip {
     private Image spaceShipImage;
     boolean running, goNorth, goSouth, goEast, goWest;
     ImageView nodeSpaceShip = new ImageView();
+    static ArrayList bullets;
 
 
     public SpaceShip() {
@@ -56,14 +58,7 @@ public class SpaceShip {
 
                     break;
                 case X:
-                    ////
-                    JFrame f = new JFrame("tester");
-                    Bullet p = new Bullet();
-                    f.add(p);
-                    f.setVisible(true);
-                    f.setSize(400,250);
-                    p.move();
-                    p.repaint();
+                    fire();
                     break;
             }
         });
@@ -137,5 +132,20 @@ public class SpaceShip {
         boxForShip.getChildren().addAll(nodeSpaceShip);
         main.getRoot().getChildren().add(boxForShip);
 
+    }
+    public void fire(){
+        JFrame f = new JFrame("tester");
+        Bullet p = new Bullet();
+        f.add(p);
+        f.setVisible(true);
+        f.setSize(400,250);
+        p.move();
+        p.repaint();
+
+        bullets.add(p);
+    }
+
+    public static ArrayList getBullets(){
+        return bullets;
     }
 }
