@@ -21,7 +21,10 @@ public class SpaceShip {
     private Image spaceShipImage;
     boolean running, goNorth, goSouth, goEast, goWest;
     ImageView nodeSpaceShip = new ImageView();
-    static ArrayList bullets;
+
+    ArrayList<Bullet> bullets = new ArrayList<Bullet>();
+
+
 
     final SwingNode swingNode = new SwingNode();
 
@@ -31,7 +34,6 @@ public class SpaceShip {
         shipMovment();
         addToScreen();
         setSpaceShipPosition(W / 2, H / 2);
-        bullets = new ArrayList();
     }
 
     public void shipAnimated() {
@@ -139,21 +141,27 @@ public class SpaceShip {
 
 
     private void createAndSetSwingContent(final SwingNode swingNode) {
+
         SwingUtilities.invokeLater(() -> {
-            JFrame f = new JFrame("tester");
             Bullet newBullet = new Bullet();
-            swingNode.setContent(newBullet);
             bullets.add(newBullet);
+            JFrame f = new JFrame("tester");
+            swingNode.setContent(newBullet);
             f.add(newBullet);
             f.setVisible(true);
             f.setSize(500,500);
-            newBullet.move();
             newBullet.repaint();
+            //swingNode.setContent(newBullet);
+
         });
+    }
+    public void removeBullet(){
+        Bullet newBullet = new Bullet();
+        bullets.remove(newBullet);
     }
 
     public void addToScreen() {
-        boxForShip.getChildren().addAll(swingNode,nodeSpaceShip);
+        boxForShip.getChildren().addAll(nodeSpaceShip);
         main.getRoot().getChildren().add(boxForShip);
     }
 }
