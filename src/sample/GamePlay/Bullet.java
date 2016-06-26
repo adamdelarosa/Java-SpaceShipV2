@@ -11,11 +11,9 @@ public class Bullet extends JPanel implements ActionListener {
     private int x = 400;
     private Timer timer = new Timer(5, (ActionListener) this);
 
-
     public Bullet() {
         timer.start();
     }
-
 
     public void actionPerformed(ActionEvent ev) {
         if (x >= 0) {
@@ -32,6 +30,7 @@ public class Bullet extends JPanel implements ActionListener {
         g.setColor(Color.CYAN);
         g.fillRect(20, x, 20, 20);
     }
+
     public int getX(){
         return x;
     }
