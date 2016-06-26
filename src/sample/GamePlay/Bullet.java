@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 public class Bullet extends JPanel implements ActionListener {
 
+    SpaceShip ss;
     private int x = 400;
     private Timer timer = new Timer(5, (ActionListener) this);
 

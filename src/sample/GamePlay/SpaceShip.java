@@ -20,9 +20,9 @@ public class SpaceShip {
     private static String SPACESHIP = "sample/Asset/Image/spaceShip.png";
     private Image spaceShipImage;
     boolean running, goNorth, goSouth, goEast, goWest;
-    ImageView nodeSpaceShip = new ImageView();
+    public ArrayList<Bullet> bullets = new ArrayList<>();
+    public ImageView nodeSpaceShip = new ImageView();
 
-    ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
 
 
@@ -151,13 +151,13 @@ public class SpaceShip {
             f.setVisible(true);
             f.setSize(500,500);
             newBullet.repaint();
-            //swingNode.setContent(newBullet);
+            swingNode.setContent(newBullet);
+
         });
     }
-    public void removeBullet(){
-        System.out.println("removeBullet lunch.");
-        //Bullet newBullet = new Bullet();
-        //bullets.remove(newBullet);
+
+    public ArrayList BulletList(){
+        return bullets;
     }
 
     public void addToScreen() {
