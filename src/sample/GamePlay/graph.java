@@ -1,53 +1,62 @@
 package sample.GamePlay;
 
+import javafx.embed.swing.SwingNode;
+import javafx.scene.image.*;
+import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
+import sample.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class graph extends JPanel implements ActionListener {
+public class graph implements ActionListener {
 
     int x;
+    private Main main;
+    public HBox boxForShip = new HBox();
+    private static double W = 500, H = 800;
+    private static String SPACESHIP = "sample/Asset/Image/lazerFire.png";
+    private Image spaceShipImage;
+    boolean running, goNorth, goSouth, goEast, goWest;
+    public ArrayList<Bullet> bullets = new ArrayList<>();
+    public ImageView nodeSpaceShip = new ImageView();
+    public SwingNode swingNode = new SwingNode();
+
+    SpaceShip spaceShipClass;
 
     Timer timer = new Timer(5, (ActionListener) this);
 
-
-    ArrayList<Shot> shot = new ArrayList<Shot>();
-
-    ArrayList<Shape> shapeList = new ArrayList<Shape>();
-
-    Rectangle e1 = new Rectangle(20, 75, 35, 35);
-
+    double cx =100;
 
     public graph() {
-        move();
+        timer.start();
+        addToScreen();
+        System.out.println(spaceShipClass.getShipX());
+
     }
 
-    public void move() {
-        timer.start();
-    }
 
     public void actionPerformed(ActionEvent ev) {
+
+
+        spaceShipImage = new Image(SPACESHIP);
+        nodeSpaceShip.setImage(spaceShipImage);
+        //boxForShip.relocate();
+
         if (x <= 100) {
             //shapeList.add(e1);
             x += 3;
-            repaint();
 
         } else {
 
 
         }
     }
-
-
-    public void paintComponent(Graphics g) {
-        g.fillRect(x, 20, 10, 10);
-        g.setColor(Color.black);
-        g.clearRect(0,0,getWidth(),getHeight());
-    }
-
-    public void terminateBullte(){
-
+    public void addToScreen() {
+        boxForShip.getChildren().addAll(nodeSpaceShip, swingNode);
+        main.getRoot().getChildren().add(boxForShip);
     }
 }

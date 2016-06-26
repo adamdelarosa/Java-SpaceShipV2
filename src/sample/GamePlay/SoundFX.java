@@ -8,11 +8,6 @@ public class SoundFX {
 
     String levelMusicOne = "/sample/Asset/SoundFX/Music/LevelOneMusic.wav";
 
-
-    public SoundFX(){
-        whilePlayGameMusic();
-    }
-
     public void whilePlayGameMusic() {
         try {
             Clip clip = AudioSystem.getClip();

@@ -1,43 +1,27 @@
 package sample.GamePlay;
 
 import javafx.animation.AnimationTimer;
+import javafx.embed.swing.JFXPanel;
 import javafx.embed.swing.SwingNode;
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import sample.Main;
-
 
 import javax.swing.*;
 import java.util.ArrayList;
 
 public class SpaceShip {
 
-    Main main;
+    private Main main;
     public HBox boxForShip = new HBox();
-
     private static double W = 500, H = 800;
     private static String SPACESHIP = "sample/Asset/Image/spaceShip.png";
     private Image spaceShipImage;
     boolean running, goNorth, goSouth, goEast, goWest;
     public ArrayList<Bullet> bullets = new ArrayList<>();
     public ImageView nodeSpaceShip = new ImageView();
-
-
-
-
-    final SwingNode swingNode = new SwingNode();
-
-
-    public SpaceShip() {
-        shipAnimated();
-        shipMovment();
-        addToScreen();
-        setSpaceShipPosition(W / 2, H / 2);
-    }
+    public SwingNode swingNode = new SwingNode();
 
     public void shipAnimated() {
         spaceShipImage = new Image(SPACESHIP);
@@ -126,7 +110,7 @@ public class SpaceShip {
         setSpaceShipPosition(x, y);
     }
 
-    private void setSpaceShipPosition(double x, double y) {
+    public void setSpaceShipPosition(double x, double y) {
         final double cx = boxForShip.getBoundsInLocal().getWidth() / 2;
         final double cy = boxForShip.getBoundsInLocal().getHeight() / 2;
 
@@ -138,44 +122,39 @@ public class SpaceShip {
         }
     }
 
+    public double getShipX(){
+        return H;
+    }
+
+    public double getShipY(){
+        return W;
+    }
+
     public void fire() {
-        createAndSetSwingContent(swingNode);
-    }
+        new graph();
 
-
-    private void createAndSetSwingContent(final SwingNode swingNode) {
-
-        SwingUtilities.invokeLater(() -> {
+       /* SwingUtilities.invokeLater(() -> {
+            JFrame f = new JFrame();
             Bullet newBullet = new Bullet();
+
             bullets.add(newBullet);
-            JFrame f = new JFrame("tester");
-            swingNode.setContent(newBullet);
-            swingNode.setVisible(true);
-            //f.add(newBullet);
-            //f.setVisible(true);
-            //f.setSize(500,500);
+            f.add(newBullet);
+            f.setVisible(true);
+            //swingNode.setContent(f);
+            //swingNode.setVisible(true);
+            f.setVisible(true);
+            f.setSize(500,500);
             newBullet.repaint();
-            swingNode.setContent(newBullet);
-
-            final Rectangle[] nodes = new Rectangle[1];
-            nodes[1] = new Rectangle(1,1, Color.WHITE);
-            final Node node = nodes[1];
-            HBox backgroundBox = new HBox();
-            backgroundBox.getChildren().addAll(nodes);
-            main.getRoot().getChildren().add(backgroundBox);
-
-        });
-
-
-
+        });*/
     }
 
-    public ArrayList BulletList(){
+
+    public ArrayList BulletList() {
         return bullets;
     }
 
     public void addToScreen() {
-        boxForShip.getChildren().addAll(nodeSpaceShip,swingNode);
+        boxForShip.getChildren().addAll(nodeSpaceShip, swingNode);
         main.getRoot().getChildren().add(boxForShip);
     }
 }
