@@ -2,9 +2,12 @@ package sample.GamePlay;
 
 import javafx.animation.AnimationTimer;
 import javafx.embed.swing.SwingNode;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import sample.Main;
 
 
@@ -147,13 +150,24 @@ public class SpaceShip {
             bullets.add(newBullet);
             JFrame f = new JFrame("tester");
             swingNode.setContent(newBullet);
-            f.add(newBullet);
-            f.setVisible(true);
-            f.setSize(500,500);
+            swingNode.setVisible(true);
+            //f.add(newBullet);
+            //f.setVisible(true);
+            //f.setSize(500,500);
             newBullet.repaint();
             swingNode.setContent(newBullet);
 
+            final Rectangle[] nodes = new Rectangle[1];
+            nodes[1] = new Rectangle(1,1, Color.WHITE);
+            final Node node = nodes[1];
+            HBox backgroundBox = new HBox();
+            backgroundBox.getChildren().addAll(nodes);
+            main.getRoot().getChildren().add(backgroundBox);
+
         });
+
+
+
     }
 
     public ArrayList BulletList(){
@@ -161,7 +175,7 @@ public class SpaceShip {
     }
 
     public void addToScreen() {
-        boxForShip.getChildren().addAll(nodeSpaceShip);
+        boxForShip.getChildren().addAll(nodeSpaceShip,swingNode);
         main.getRoot().getChildren().add(boxForShip);
     }
 }

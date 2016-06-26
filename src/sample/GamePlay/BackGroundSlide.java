@@ -6,26 +6,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.animation.AnimationTimer;
 import sample.Main;
-
-import javax.swing.*;
-import java.awt.*;
 import java.util.Random;
 
-public class BackGroundSlide extends JPanel {
+public class BackGroundSlide {
 
-    public Main main,sceneMain,globalPrimartStageMain;
+    public Main main;
 
     private static final int STAR_COUNT = 2000;
     private final Rectangle[] nodes = new Rectangle[STAR_COUNT];
     private final double[] angles = new double[STAR_COUNT];
     private final long[] start = new long[STAR_COUNT];
     private final Random random = new Random();
-
-    public BackGroundSlide() {
-        testArea();
-        repaint();
-
-    }
 
     public void testArea() {
         for (int i = 0; i < STAR_COUNT; i++) {
@@ -50,11 +41,6 @@ public class BackGroundSlide extends JPanel {
         HBox backgroundBox = new HBox();
         backgroundBox.getChildren().addAll(nodes);
         main.getRoot().getChildren().add(backgroundBox);
-    }
-
-    public void paintComponent(Graphics g) {
-        g.fillRect(20, 20, 20, 20);
-        g.setColor(java.awt.Color.yellow);
     }
 }
 
