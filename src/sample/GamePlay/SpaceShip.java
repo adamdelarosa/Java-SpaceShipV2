@@ -55,6 +55,9 @@ public class SpaceShip {
                 case X:
                     fire();
                     break;
+                case Z:
+                    System.out.println("ShipX: "+ boxForShip.getLayoutX() + "ShipY: " + boxForShip.getLayoutY());
+                    break;
             }
         });
 
