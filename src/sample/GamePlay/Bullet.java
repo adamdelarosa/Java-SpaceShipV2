@@ -10,7 +10,6 @@ public class Bullet extends JPanel implements ActionListener {
 
     private int x = 400;
     private Timer timer = new Timer(5, (ActionListener) this);
-//    SpaceShip spaceShip = new SpaceShip();
 
 
     public Bullet() {
@@ -24,12 +23,16 @@ public class Bullet extends JPanel implements ActionListener {
             repaint();
             System.out.println(x);
         }else {
-        //    spaceShip.removeBullet();
+            System.out.println("Done");
+            timer.stop();
         }
     }
 
     public void paintComponent(Graphics g) {
         g.setColor(Color.CYAN);
         g.fillRect(20, x, 20, 20);
+    }
+    public int getX(){
+        return x;
     }
 }

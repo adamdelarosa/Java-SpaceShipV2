@@ -152,12 +152,12 @@ public class SpaceShip {
             f.setSize(500,500);
             newBullet.repaint();
             //swingNode.setContent(newBullet);
-
         });
     }
     public void removeBullet(){
-        Bullet newBullet = new Bullet();
-        bullets.remove(newBullet);
+        System.out.println("removeBullet lunch.");
+        //Bullet newBullet = new Bullet();
+        //bullets.remove(newBullet);
     }
 
     public void addToScreen() {
